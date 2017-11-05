@@ -17,6 +17,10 @@
 
 ;; fly-check
 (add-hook 'after-init-hook #'global-flycheck-mode)
+(add-hook 'c++-mode-hook (lambda()
+                           (setq flycheck-gcc-language-standard "c++14")
+                           (setq flycheck-clang-language-standard "c++14")))
+
 
 ;; auto-complete
 (require 'auto-complete-config)
